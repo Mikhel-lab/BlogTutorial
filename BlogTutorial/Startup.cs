@@ -45,6 +45,12 @@ namespace BlogTutorial
             services.AddRazorPages();
 
             services.AddScoped<IAdminRepo, AdminRepo>();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Admin/Index";
+            });
+                
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
